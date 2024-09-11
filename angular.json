@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "f-platform": {
+    "f-platform-portal": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/f-platform",
+            "outputPath": "dist/f-platform-portal",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -29,7 +29,12 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "server": "src/main.server.ts",
+            "prerender": true,
+            "ssr": {
+              "entry": "server.ts"
+            }
           },
           "configurations": {
             "production": {
@@ -59,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "f-platform:build:production"
+              "buildTarget": "f-platform-portal:build:production"
             },
             "development": {
-              "buildTarget": "f-platform:build:development"
+              "buildTarget": "f-platform-portal:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -88,6 +93,39 @@
               "src/styles.css"
             ],
             "scripts": []
+          }
+        }
+      }
+    },
+    "f-platform": {
+      "projectType": "library",
+      "root": "projects/f-platform",
+      "sourceRoot": "projects/f-platform/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/f-platform/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/f-platform/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/f-platform/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/f-platform/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
           }
         }
       }

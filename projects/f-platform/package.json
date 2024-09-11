@@ -1,0 +1,27 @@
+{
+  "name": "@foblex/platform",
+  "version": "1.0.0",
+  "description": "An Angular library providing a set of services for supporting server-side rendering (SSR) and other features.",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/siarheihuzarevich/f-platform.git"
+  },
+  "private": false,
+  "keywords": [
+    "Angular",
+    "Foblex",
+    "development",
+    "kit"
+  ],
+  "author": "Siarhei Huzarevich",
+  "license": "MIT",
+  "peerDependencies": {
+    "@angular/common": ">=12.0.0",
+    "@angular/core": ">=12.0.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}
