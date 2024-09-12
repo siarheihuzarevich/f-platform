@@ -6,8 +6,17 @@ export class ServerWindowService implements IWindowService {
 
   public getComputedStyle(element: Element): CSSStyleDeclaration {
     // @ts-ignore
-    return new Proxy({}, {
-      get: () => '0'
+    return new Proxy({
+      getPropertyValue: (property: string) => {
+        return '0';
+      }
+    }, {
+      get: (target, prop) => {
+        if (prop === 'getPropertyValue') {
+          return target.getPropertyValue;
+        }
+        return '0';
+      }
     });
   }
 
@@ -37,5 +46,9 @@ export class ServerWindowService implements IWindowService {
 
   public get location(): { href: string, pathname: string, search: string, hash: string } {
     return { href: '', pathname: '', search: '', hash: '' };
+  }
+
+  public open(url?: string, target?: string, features?: string): void {
+    // Do nothing
   }
 }

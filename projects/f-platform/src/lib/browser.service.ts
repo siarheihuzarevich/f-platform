@@ -2,6 +2,7 @@ import { Injectable, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { F_WINDOW, IWindowService } from './window';
 import { F_LOCAL_STORAGE, ILocalStorage } from './local-storage';
+import { PlatformService } from './platform.service';
 
 @Injectable({ providedIn: 'root' })
 export class BrowserService {
@@ -9,8 +10,13 @@ export class BrowserService {
   constructor(
     @Inject(DOCUMENT) private injectedDocument: Document,
     @Inject(F_WINDOW) private windowService: IWindowService,
-    @Inject(F_LOCAL_STORAGE) private localStorageService: ILocalStorage
+    @Inject(F_LOCAL_STORAGE) private localStorageService: ILocalStorage,
+    private platformService: PlatformService
   ) {
+  }
+
+  public isBrowser(): boolean {
+    return this.platformService.isBrowser;
   }
 
   public get window(): IWindowService {

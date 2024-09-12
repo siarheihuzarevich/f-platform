@@ -15,4 +15,6 @@ export interface IWindowService {
   requestAnimationFrame(callback: FrameRequestCallback): number;
 
   location: Location | { href: string, pathname: string, search: string, hash: string };
+
+  open(url?: string, target?: string, features?: string): void;
 }

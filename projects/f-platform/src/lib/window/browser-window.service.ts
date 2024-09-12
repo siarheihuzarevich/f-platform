@@ -35,4 +35,8 @@ export class BrowserWindowService implements IWindowService {
   public get location(): Location {
     return window.location;
   }
+
+  public open(url?: string, target?: string, features?: string): void {
+    window.open(url, target, features);
+  }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@foblex/platform",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "An Angular library providing a set of services for supporting server-side rendering (SSR) and other features.",
   "main": "index.js",
   "types": "index.d.ts",
