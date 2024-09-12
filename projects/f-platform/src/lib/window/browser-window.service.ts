@@ -16,11 +16,23 @@ export class BrowserWindowService implements IWindowService {
     return window.innerHeight;
   }
 
+  public get pageXOffset(): number {
+    return window.pageXOffset;
+  }
+
+  public get pageYOffset(): number {
+    return window.pageYOffset;
+  }
+
   public isMediaQuery(query: string): boolean {
     return window.matchMedia(query).matches;
   }
 
   public requestAnimationFrame(callback: FrameRequestCallback): number {
     return window.requestAnimationFrame(callback);
+  }
+
+  public get location(): Location {
+    return window.location;
   }
 }

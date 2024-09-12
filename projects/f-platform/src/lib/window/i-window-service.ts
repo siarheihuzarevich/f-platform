@@ -6,7 +6,13 @@ export interface IWindowService {
 
   innerHeight: number;
 
+  pageXOffset: number;
+
+  pageYOffset: number;
+
   isMediaQuery(query: string): boolean;
 
   requestAnimationFrame(callback: FrameRequestCallback): number;
+
+  location: Location | { href: string, pathname: string, search: string, hash: string };
 }

@@ -19,11 +19,23 @@ export class ServerWindowService implements IWindowService {
     return 0;
   }
 
+  public get pageXOffset(): number {
+    return 0;
+  }
+
+  public get pageYOffset(): number {
+    return 0;
+  }
+
   public isMediaQuery(query: string): boolean {
     return false;
   }
 
-  requestAnimationFrame(callback: FrameRequestCallback): number {
+  public requestAnimationFrame(callback: FrameRequestCallback): number {
     return setTimeout(callback, 0);
+  }
+
+  public get location(): { href: string, pathname: string, search: string, hash: string } {
+    return { href: '', pathname: '', search: '', hash: '' };
   }
 }

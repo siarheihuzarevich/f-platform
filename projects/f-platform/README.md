@@ -111,8 +111,6 @@ export class AppComponent {
 - window: IWindowService - Provides access to window or a server-safe mock.
 - localStorage: ILocalStorage - Provides access to localStorage or a server-safe mock.
 - document: Document - Provides access to the document object.
-- getTitle(): string | null - Gets the current document title.
-- setTitle(title: string): void - Sets the document title.
 - toPixels(value: string, clientWidth: number, clientHeight: number, fontSize: string): number - Converts CSS units (%, em, rem, vh, vw) to pixels.
 
 ### Window Injection Token (F_WINDOW)

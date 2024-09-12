@@ -25,14 +25,6 @@ export class BrowserService {
     return this.injectedDocument;
   }
 
-  public getTitle(): string | null {
-    return this.document.title;
-  }
-
-  public setTitle(title: string): void {
-    this.document.title = title;
-  }
-
   public toPixels(value: string, clientWidth: number, clientHeight: number, fontSize: string): number {
     if (value.endsWith('px')) {
       return parseFloat(value);
