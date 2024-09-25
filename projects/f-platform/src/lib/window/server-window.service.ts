@@ -44,8 +44,8 @@ export class ServerWindowService implements IWindowService {
     return setTimeout(callback, 0);
   }
 
-  public get location(): { href: string, pathname: string, search: string, hash: string } {
-    return { href: '', pathname: '', search: '', hash: '' };
+  public get location(): { href: string, pathname: string, search: string, hash: string, origin: string } {
+    return { href: '', pathname: '', search: '', hash: '', origin: '' };
   }
 
   public open(url?: string, target?: string, features?: string): void {
