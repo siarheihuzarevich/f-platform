@@ -1,6 +1,9 @@
 {
   "name": "f-platform-portal",
   "version": "0.0.0",
+  "bugs": {
+    "url": "https://github.com/siarheihuzarevich/f-platform/issues"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
