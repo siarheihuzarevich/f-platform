@@ -43,5 +43,6 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "ng-packagr": "^18.2.0",
     "typescript": "~5.5.2"
-  }
+  },
+  "types": "index.d.ts"
 }
